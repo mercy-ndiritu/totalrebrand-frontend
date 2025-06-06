@@ -1,4 +1,4 @@
-import { Award, Users, Globe, Leaf, Target, Heart, Shield, Zap } from 'lucide-react';
+import {  Users, Globe, Leaf, Target, Heart, Shield } from 'lucide-react';
 import { Card, CardContent } from '../components/ui/card';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -80,7 +80,7 @@ const About = () => {
             <div className="relative animate-slide-in">
               <div className="relative bg-gradient-to-br from-energy-primary/10 to-energy-secondary/10 rounded-3xl p-8 border border-gray-100">
                 <div className="grid grid-cols-2 gap-8">
-                  {achievements.map((achievement, index) => (
+                  {achievements.map((achievement) => (
                     <div key={achievement.label} className="text-center">
                       <div className="text-3xl font-bold text-energy-primary mb-2">
                         {achievement.number}

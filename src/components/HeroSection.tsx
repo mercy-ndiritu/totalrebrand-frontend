@@ -3,7 +3,7 @@ import { Button } from '../components/ui/button';
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white dark:bg-white">
       {/* Background Gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-energy-primary via-energy-secondary to-energy-accent opacity-10"></div>
       
@@ -20,8 +20,8 @@ const HeroSection = () => {
           {/* Content */}
           <div className="space-y-8 animate-fade-in">
             <div className="space-y-6">
-              <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 border border-white/20">
-                <Award className="h-4 w-4 text-energy-solar" />
+              <div className="inline-flex items-center space-x-2 bg-orange-100 backdrop-blur-sm rounded-full px-4 py-2 border border-orange-200">
+                <Award className="h-4 w-4 text-orange-600" />
                 <span className="text-sm font-medium text-gray-700">#1 Energy Provider in Kenya</span>
               </div>
               
@@ -50,8 +50,8 @@ const HeroSection = () => {
               <Button 
                 size="lg" 
                 variant="outline" 
-                className="border-2 border-energy-primary text-energy-primary hover:bg-energy-primary hover:text-white px-8 py-4 rounded-full font-semibold group"
-              >
+                className="border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white bg-white px-8 py-4 rounded-full font-semibold group"
+                >
                 <Play className="mr-2 h-5 w-5" />
                 Our Impact Story
               </Button>

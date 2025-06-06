@@ -1,6 +1,6 @@
 import { MapPin, Phone, Mail, Clock, Send, MessageCircle } from 'lucide-react';
 import { Button } from '../components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card';
+import { Card, CardContent } from '../components/ui/card';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
@@ -187,7 +187,7 @@ const Contact = () => {
               </h2>
               
               <div className="space-y-6">
-                {offices.map((office, index) => (
+                {offices.map((office) => (
                   <Card key={office.city} className="border border-gray-200 hover:shadow-lg transition-shadow">
                     <CardContent className="p-6">
                       <div className="flex items-start space-x-4">

@@ -1,4 +1,4 @@
-import { Fuel, Zap, Building2, Leaf, ArrowRight, MapPin, Clock, Users } from 'lucide-react';
+import { Fuel, Zap, Building2, Leaf, ArrowRight, MapPin, Clock } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card';
 import Header from '../components/Header';
