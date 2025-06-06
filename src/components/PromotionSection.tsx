@@ -53,42 +53,50 @@ const PromotionsSection = () => {
         </div>
 
         {/* Promotions Grid */}
-        <div className="grid md:grid-cols-3 gap-8 mb-16">
+        {/* Promotions Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-12 lg:mb-16">
           {promotions.map((promo, index) => (
-            <Card 
+            <div 
               key={promo.title}
-              className="group hover:shadow-2xl transition-all duration-300 border-0 shadow-lg hover:-translate-y-2 animate-fade-in overflow-hidden relative"
-              style={{ animationDelay: `${index * 0.1}s` }}
+              className="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:-translate-y-2 overflow-hidden relative h-full flex flex-col"
+              style={{ 
+                animation: `fadeInUp 0.6s ease-out ${index * 0.1}s both`
+              }}
             >
               {/* Discount Badge */}
-              <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-full px-3 py-1 z-10">
-                <span className="text-sm font-bold text-energy-accent">{promo.discount}</span>
+              <div className="absolute top-4 right-4 bg-white/95 backdrop-blur-sm rounded-full px-3 py-1.5 z-10 shadow-sm">
+                <span className="text-sm font-bold text-orange-600">{promo.discount}</span>
               </div>
 
-              <CardContent className="p-0">
-                <div className={`${promo.gradient} h-24 flex items-center justify-center`}>
-                  <promo.icon className="h-12 w-12 text-white" />
+              {/* Icon Header */}
+              <div className={`${promo.gradient} h-20 sm:h-24 flex items-center justify-center relative`}>
+                <promo.icon className="h-10 w-10 sm:h-12 sm:w-12 text-white drop-shadow-lg" />
+              </div>
+              
+              {/* Card Content */}
+              <div className="p-5 lg:p-6 space-y-4 flex-1 flex flex-col">
+                <h3 className="text-lg lg:text-xl font-bold text-gray-900 leading-tight">
+                  {promo.title}
+                </h3>
+                <p className="text-gray-600 text-sm lg:text-base leading-relaxed flex-1">
+                  {promo.description}
+                </p>
+                
+                {/* Validity */}
+                <div className="flex items-center text-xs lg:text-sm text-gray-500 pt-2 border-t border-gray-100">
+                  <Clock className="h-3.5 w-3.5 lg:h-4 lg:w-4 mr-2 flex-shrink-0" />
+                  <span>Valid until: {promo.validUntil}</span>
                 </div>
                 
-                <div className="p-6 space-y-4">
-                  <h3 className="text-xl font-bold text-gray-900">{promo.title}</h3>
-                  <p className="text-gray-600">{promo.description}</p>
-                  
-                  <div className="flex items-center text-sm text-gray-500">
-                    <Clock className="h-4 w-4 mr-2" />
-                    Valid until: {promo.validUntil}
-                  </div>
-                  
-                  <Button className="w-full bg-energy-gradient hover:opacity-90 text-white group-hover:scale-105 transition-transform">
-                    {promo.ctaText}
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
+                {/* CTA Button */}
+                <button className="w-full bg-gradient-to-r from-orange-500 to-blue-600 hover:from-orange-600 hover:to-blue-700 text-white font-semibold py-3 px-4 rounded-xl transition-all duration-200 group-hover:scale-105 flex items-center justify-center space-x-2 mt-4">
+                  <span>{promo.ctaText}</span>
+                  <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                </button>
+              </div>
+            </div>
           ))}
         </div>
-
         {/* Newsletter Signup */}
         <div className="bg-white rounded-3xl p-8 lg:p-12 shadow-lg border border-gray-100 text-center animate-fade-in">
           <h3 className="text-3xl font-bold text-gray-900 mb-4">

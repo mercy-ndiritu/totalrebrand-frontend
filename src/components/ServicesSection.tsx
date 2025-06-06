@@ -106,7 +106,7 @@ const ServicesSection = () => {
               <Button size="lg" className="bg-energy-gradient hover:opacity-90 text-white px-8 py-4 rounded-full">
                 Get Quote
               </Button>
-              <Button size="lg" variant="outline" className="border-2 border-energy-primary text-energy-primary hover:bg-energy-primary hover:text-white px-8 py-4 rounded-full">
+              <Button size="lg" variant="outline" className="border-2 border-energy-primary text-energy-primary hover:bg-energy-primary bg-white hover:text-white px-8 py-4 rounded-full">
                 Find Nearest Station
               </Button>
             </div>

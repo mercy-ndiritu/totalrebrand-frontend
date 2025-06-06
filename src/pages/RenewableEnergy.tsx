@@ -97,7 +97,7 @@ const RenewableEnergy = () => {
                 Explore Solutions
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
-              <Button size="lg" variant="outline" className="border-2 border-energy-primary text-energy-primary hover:bg-energy-primary hover:text-white px-8 py-4 rounded-full">
+              <Button size="lg" variant="outline" className="border-2 border-energy-primary text-energy-primary hover:bg-energy-primary bg-white hover:text-white px-8 py-4 rounded-full">
                 Get Assessment
               </Button>
             </div>
