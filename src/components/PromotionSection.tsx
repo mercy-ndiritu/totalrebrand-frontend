@@ -1,6 +1,5 @@
 import { Gift, Clock, ArrowRight, Percent } from 'lucide-react';
 import { Button } from '../components/ui/button';
-import { Card, CardContent } from '../components/ui/card';
 
 const PromotionsSection = () => {
   const promotions = [
