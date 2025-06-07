@@ -15,7 +15,7 @@ const Products = () => {
       title: 'Fuels',
       icon: Fuel,
       description: 'High-quality automotive and industrial fuels designed for optimal performance and efficiency.',
-      image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?auto=format&fit=crop&w=800&q=80',
+      image: '/fuels.png',
       products: ['Premium Gasoline', 'Diesel', 'Jet Fuel', 'Marine Fuels', 'Heating Oil'],
       features: [
         'Advanced fuel additives for engine protection',
@@ -34,7 +34,7 @@ const Products = () => {
       title: 'Lubricants',
       icon: Zap,
       description: 'Premium lubricants and oils for automotive, industrial, and marine applications.',
-      image: 'https://images.unsplash.com/photo-1486506073020-3edd0945102f?auto=format&fit=crop&w=800&q=80',
+      image: '/lubricant.png',
       products: ['Engine Oils', 'Transmission Fluids', 'Hydraulic Oils', 'Grease', 'Industrial Lubricants'],
       features: [
         'Advanced synthetic formulations',
@@ -72,7 +72,7 @@ const Products = () => {
       title: 'TotalEnergies Gas',
       icon: FlameKindling,
       description: 'Clean and efficient LPG solutions for cooking, heating, and industrial applications.',
-      image: 'https://images.unsplash.com/photo-1574313266751-ba324c3b6b22?auto=format&fit=crop&w=800&q=80',
+      image: '/Total-Gas.jpg',
       products: ['Cooking Gas', 'Industrial LPG', 'Bulk Gas Supply', 'Gas Cylinders', 'Gas Accessories'],
       features: [
         'Pure LPG with consistent quality',

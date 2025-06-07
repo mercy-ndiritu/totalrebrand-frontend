@@ -25,9 +25,9 @@ const HeroSection = () => {
             {/* Content */}
             <div className="space-y-8 animate-fade-in">
               <div className="space-y-6">
-                <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 border border-white/20">
-                  <Award className="h-4 w-4 text-energy-solar" />
-                  <span className="text-sm font-medium text-gray-700">#1 Energy Provider in Kenya</span>
+                <div className="inline-flex items-center space-x-2 bg-orange-100 backdrop-blur-sm rounded-full px-4 py-2 border border-orange-200">
+                    <Award className="h-4 w-4 text-orange-600" />
+                    <span className="text-sm font-medium text-gray-700">#1 Energy Provider in Kenya</span>
                 </div>
                 
                 <h1 className="text-5xl lg:text-7xl font-bold font-poppins leading-tight">
