@@ -212,11 +212,11 @@ const RenewableEnergy = () => {
 
           <div className="grid md:grid-cols-3 gap-8">
             {projects.map((project, index) => (
-              <Card 
+              <Card
                 key={project.name}
-                className="bg-white/10 border-white/20 text-white hover:bg-white/15 transition-all duration-300 animate-fade-in"
+                className="bg-white/10 border-white/20 text-white hover:bg-white/15 transition-all duration-300 hover:scale-105"
                 style={{ animationDelay: `${index * 0.1}s` }}
-              >
+                >
                 <CardContent className="p-6">
                   <div className="flex justify-between items-start mb-4">
                     <h3 className="text-xl font-bold">{project.name}</h3>

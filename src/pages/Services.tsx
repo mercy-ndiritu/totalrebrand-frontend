@@ -1,10 +1,15 @@
+import { useState } from 'react';
 import { Fuel, Zap, Building2, Leaf, ArrowRight, MapPin, Clock } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import ServiceDetailModal from '../components/ServiceDetailModal';
 
 const Services = () => {
+  const [selectedService, setSelectedService] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   const services = [
     {
       icon: Fuel,
@@ -12,6 +17,7 @@ const Services = () => {
       description: 'Premium fuel and services at over 500 stations across Kenya with 24/7 availability.',
       gradient: 'bg-gradient-to-br from-energy-primary to-energy-wind',
       features: ['Premium Fuels', '24/7 Service', 'Loyalty Rewards', 'Mobile Payment'],
+      benefits: ['Consistent Quality', 'Nationwide Coverage', 'Loyalty Points', 'Quick Service'],
       locations: '500+ Stations',
       availability: '24/7 Service'
     },
@@ -21,6 +27,7 @@ const Services = () => {
       description: 'Solar, wind, and hybrid energy solutions for residential and commercial needs.',
       gradient: 'bg-sustainable-gradient',
       features: ['Solar Power', 'Wind Energy', 'Energy Storage', 'Smart Grids'],
+      benefits: ['Cost Savings', 'Environmental Impact', 'Energy Independence', 'Government Incentives'],
       locations: '100MW Capacity',
       availability: 'Clean Energy'
     },
@@ -30,6 +37,7 @@ const Services = () => {
       description: 'Comprehensive energy solutions tailored for businesses and industrial operations.',
       gradient: 'bg-gradient-to-br from-energy-accent to-energy-solar',
       features: ['Fleet Management', 'Bulk Supply', 'Energy Consulting', 'Custom Solutions'],
+      benefits: ['Volume Discounts', 'Dedicated Support', 'Flexible Payment', 'Analytics Dashboard'],
       locations: '2000+ Clients',
       availability: 'B2B Solutions'
     },
@@ -39,10 +47,21 @@ const Services = () => {
       description: 'Environmental initiatives and carbon-neutral solutions for a greener future.',
       gradient: 'bg-gradient-to-br from-energy-secondary to-energy-primary',
       features: ['Carbon Offset', 'Green Initiatives', 'Circular Economy', 'Clean Technology'],
+      benefits: ['ESG Compliance', 'Brand Enhancement', 'Cost Efficiency', 'Future-Ready'],
       locations: 'Nationwide',
       availability: 'Eco-Friendly'
     }
   ];
+
+  const handleServiceClick = (service) => {
+    setSelectedService(service);
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+    setSelectedService(null);
+  };
 
   return (
     <div className="min-h-screen font-inter bg-gray-50">
@@ -108,7 +127,10 @@ const Services = () => {
                     </ul>
                   </div>
                   
-                  <Button className="w-full bg-energy-gradient hover:opacity-90 text-white group-hover:scale-105 transition-transform">
+                  <Button 
+                    className="w-full bg-energy-gradient hover:opacity-90 text-white group-hover:scale-105 transition-transform"
+                    onClick={() => handleServiceClick(service)}
+                  >
                     Learn More
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
@@ -140,6 +162,15 @@ const Services = () => {
       </section>
 
       <Footer />
+
+      {/* Service Detail Modal */}
+      {selectedService && (
+        <ServiceDetailModal
+          isOpen={isModalOpen}
+          onClose={handleCloseModal}
+          service={selectedService}
+        />
+      )}
     </div>
   );
 };
