@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { X, ArrowRight, MapPin, Clock, Phone } from 'lucide-react';
+//import { useState } from 'react';
+import { X, MapPin, Clock, Phone } from 'lucide-react';
 
 interface ServiceDetailModalProps {
   isOpen: boolean;

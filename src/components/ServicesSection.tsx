@@ -10,7 +10,7 @@ const ServicesSection = () => {
   const [selectedService, setSelectedService] = useState<any>(null);
   const [isServiceModalOpen, setIsServiceModalOpen] = useState(false);
   const [isStationFinderOpen, setIsStationFinderOpen] = useState(false);
-  const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
+  //const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
 
   const services = [
     {
@@ -126,7 +126,7 @@ const ServicesSection = () => {
                 <Button 
                   size="lg" 
                   className="bg-energy-gradient hover:opacity-90 text-white px-8 py-4 rounded-full"
-                  onClick={() => setIsQuoteModalOpen(true)}
+                  onClick={() => (true)}
                 >
                   Get Quote
                 </Button>

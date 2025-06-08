@@ -6,8 +6,21 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import ServiceDetailModal from '../components/ServiceDetailModal';
 
+type Service = {
+  icon: React.ComponentType<any>;  // icons are React components
+  title: string;
+  description: string;
+  gradient: string;
+  features: string[];
+  benefits: string[];
+  locations: string;
+  availability: string;
+};
+
+
 const Services = () => {
-  const [selectedService, setSelectedService] = useState(null);
+ 
+  const [selectedService, setSelectedService] = useState<Service | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const services = [
@@ -53,7 +66,7 @@ const Services = () => {
     }
   ];
 
-  const handleServiceClick = (service) => {
+  const handleServiceClick = (service: Service) => {
     setSelectedService(service);
     setIsModalOpen(true);
   };

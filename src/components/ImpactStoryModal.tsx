@@ -1,7 +1,12 @@
-import { useState } from 'react';
+//import { useState } from 'react';
 import { X, Play, Users, Zap, Leaf, Award } from 'lucide-react';
 
-const ImpactStoryModal = ({ isOpen, onClose }) => {
+type ImpactStoryModalProps = {
+  isOpen: boolean;
+  onClose: () => void;  // function with no arguments and no return value
+};
+
+const ImpactStoryModal = ({ isOpen, onClose } : ImpactStoryModalProps) => {
   const impactStats = [
     { icon: Users, label: 'Lives Impacted', value: '5M+', description: 'Kenyans benefit from our services' },
     { icon: Zap, label: 'Clean Energy', value: '100MW', description: 'Renewable capacity installed' },

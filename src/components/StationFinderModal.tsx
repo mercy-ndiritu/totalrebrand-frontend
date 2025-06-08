@@ -1,7 +1,12 @@
 import { useState } from 'react';
 import { MapPin, Navigation, Clock, Star, X } from 'lucide-react';
 
-const StationFinderModal = ({ isOpen, onClose }) => {
+type StationFinderModalProps = {
+  isOpen: boolean;
+  onClose: () => void;
+};
+
+const StationFinderModal = ({ isOpen, onClose }: StationFinderModalProps) => {
   const [searchLocation, setSearchLocation] = useState('');
 
   const nearbyStations = [
