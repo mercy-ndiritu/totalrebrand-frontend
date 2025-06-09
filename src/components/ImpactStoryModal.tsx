@@ -32,7 +32,7 @@ const ImpactStoryModal = ({ isOpen, onClose } : ImpactStoryModalProps) => {
           <h2 className="text-3xl font-bold text-blue-600">Our Impact Story</h2>
           <button
             onClick={onClose}
-            className="p-2 hover:bg-gray-100 rounded-full transition-colors"
+            className="p-2 hover:bg-gray-100 rounded-full text-black transition-colors"
           >
             <X className="h-6 w-6" />
           </button>

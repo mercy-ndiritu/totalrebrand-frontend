@@ -1,11 +1,33 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { ArrowRight, Play, Zap, Leaf, Globe, Award, } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import ImpactStoryModal from './ImpactStoryModal';
+import { db } from '../firebase';
+import { doc, getDoc } from 'firebase/firestore';
 
 const HeroSection = () => {
   const [isImpactModalOpen, setIsImpactModalOpen] = useState(false);
+  const [heroContent, setHeroContent] = useState({ title: '', heroText: '' });
 
+
+   useEffect(() => {
+    const fetchHero = async () => {
+  const docRef = doc(db, 'pages', 'home');
+  try {
+    const docSnap = await getDoc(docRef);
+    if (docSnap.exists()) {
+      setHeroContent(docSnap.data() as { title: string; heroText: string });
+    } else {
+      console.warn('Home document not found.');
+    }
+  } catch (error) {
+    console.error('Error fetching home document:', error);
+  }
+};
+
+    fetchHero();
+  }, []);
+  
   return (
     <>
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white dark:bg-white">
@@ -30,16 +52,25 @@ const HeroSection = () => {
                     <span className="text-sm font-medium text-gray-700">#1 Energy Provider in Kenya</span>
                 </div>
                 
+                {/* 🔁 Dynamic Title */}
                 <h1 className="text-5xl lg:text-7xl font-bold font-poppins leading-tight">
-                  <span className="text-energy-primary">Fuel</span>{' '}
-                  <span className="text-energy-secondary">Your</span>{' '}
-                  <span className="bg-energy-gradient bg-clip-text text-transparent">
-                    Ambitions
-                  </span>
+                {heroContent.title ? (
+                    <>
+                    <span className="text-energy-primary">{heroContent.title.split(' ')[0]}</span>{' '}
+                    <span className="text-energy-secondary">{heroContent.title.split(' ')[1]}</span>{' '}
+                    <span className="bg-energy-gradient bg-clip-text text-transparent">
+                        {heroContent.title.split(' ').slice(2).join(' ')}
+                    </span>
+                    </>
+                ) : (
+                    'Loading...'
+                )}
                 </h1>
-                
+
+
+                {/* 🔁 Dynamic Description */}
                 <p className="text-xl text-gray-600 leading-relaxed max-w-lg">
-                  From premium fuel to cutting-edge renewable energy solutions, we power Kenya's progress with innovative technologies and unmatched reliability.
+                  {heroContent.heroText || 'Loading hero section...'}
                 </p>
               </div>
 

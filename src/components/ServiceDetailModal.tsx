@@ -52,7 +52,7 @@ const ServiceDetailModal = ({ isOpen, onClose, service }: ServiceDetailModalProp
           </h2>
           <button
             onClick={onClose}
-            className="p-2 hover:bg-gray-100 rounded-full transition-colors"
+            className="p-2 hover:bg-gray-100 text-black rounded-full transition-colors"
             aria-label="Close modal"
           >
             <X className="h-6 w-6" />
