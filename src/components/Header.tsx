@@ -20,16 +20,22 @@ const Header = () => {
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2">
+            <div
+            onClick={() => {
+                const hero = document.getElementById('hero');
+                if (hero) hero.scrollIntoView({ behavior: 'smooth' });
+            }}
+            className="flex items-center space-x-2 cursor-pointer"
+            >
             <div className="flex items-center justify-center w-10 h-10 rounded-full bg-energy-gradient">
-              <Zap className="h-6 w-6 text-white" />
+                <Zap className="h-6 w-6 text-white" />
             </div>
             <div className="font-poppins">
-              <span className="text-xl font-bold text-energy-primary">Total</span>
-              <span className="text-xl font-bold text-energy-secondary">Energies</span>
-              <div className="text-xs text-gray-600 -mt-1">Kenya</div>
+                <span className="text-xl font-bold text-energy-primary">Total</span>
+                <span className="text-xl font-bold text-energy-secondary">Energies</span>
+                <div className="text-xs text-gray-600 -mt-1">Kenya</div>
             </div>
-          </Link>
+            </div>
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-8">
@@ -49,9 +55,16 @@ const Header = () => {
             <Button variant="ghost" size="sm">
               <Search className="h-4 w-4" />
             </Button>
-            <Button className="bg-energy-gradient hover:opacity-90 text-white">
-              Get Started
-            </Button>
+            <Button
+                className="bg-energy-gradient hover:opacity-90 text-white"
+                onClick={() => {
+                    const section = document.getElementById('services');
+                    if (section) section.scrollIntoView({ behavior: 'smooth' });
+                }}
+                >
+                Get Started
+                </Button>
+
           </div>
 
           {/* Mobile Menu Button */}

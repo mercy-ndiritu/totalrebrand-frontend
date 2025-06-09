@@ -30,7 +30,7 @@ const HeroSection = () => {
   
   return (
     <>
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white dark:bg-white">
+      <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white dark:bg-white">
         {/* Background Gradient */}
         <div className="absolute inset-0 bg-gradient-to-br from-energy-primary via-energy-secondary to-energy-accent opacity-10"></div>
         
@@ -75,13 +75,18 @@ const HeroSection = () => {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button 
-                  size="lg" 
-                  className="bg-energy-gradient hover:opacity-90 text-white px-8 py-4 rounded-full font-semibold group"
-                >
-                  Start Your Journey
-                  <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+               <Button 
+                    size="lg" 
+                    onClick={() => {
+                        const section = document.getElementById('services');
+                        if (section) section.scrollIntoView({ behavior: 'smooth' });
+                    }}
+                    className="bg-energy-gradient hover:opacity-90 text-white px-8 py-4 rounded-full font-semibold group"
+                    >
+                    Start Your Journey
+                    <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </Button>
+
                 
                 <Button 
                   size="lg" 
