@@ -34,7 +34,7 @@ const ImpactStoryModal = ({ isOpen, onClose } : ImpactStoryModalProps) => {
             onClick={onClose}
             className="p-2 hover:bg-gray-100 rounded-full text-black transition-colors"
           >
-            <X className="h-6 w-6" />
+            <X className="h-6 w-6 text-black" />
           </button>
         </div>
         
